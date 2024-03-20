@@ -19,9 +19,9 @@
         <th>KDV`li Fiyat</th>
         <th>Stok Adedi</th>
     </thead>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | filterPipe:filterText">
         <td>{{product.productId}}</td>
-        <td>{{product.productName | uppercase}}d>
+        <td>{{product.productName | uppercase}}</td>
         <td>{{product.categoryId}}</td>
         <td>{{product.unitPrice | currency}}</td>
         <td>{{product.unitPrice | vatAdded:10 | currency}}</td>
